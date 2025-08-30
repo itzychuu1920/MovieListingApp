@@ -50,26 +50,7 @@ function App() {
     <div className="min-h-screen bg-gray-900 text-white">
       <Navbar onSearch={handleSearch} isSearching={loading} />
       
-      {showApiKeyWarning && (
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="bg-yellow-500/20 border border-yellow-500/30 text-yellow-200 p-4 text-center"
-        >
-          <p>
-            <strong>⚠️ API Setup Required:</strong> To use CineScope, you need to get a free API key from{' '}
-            <a 
-              href="http://www.omdbapi.com/apikey.aspx" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:text-yellow-100"
-            >
-              OMDb API
-            </a>
-            {' '}and replace "YOUR_API_KEY" in src/services/omdbApi.ts
-          </p>
-        </motion.div>
-      )}
+      {showApiKeyWarning}
 
       <main>
         <HeroSection />
